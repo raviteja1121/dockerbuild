@@ -6,7 +6,7 @@ echo -e "[`date '+%Y-+%m-+%d-+%T'`]:" $1
 build_image()
 {
 log "INFO:starting building image of $1"
- docker build --build-arg BUILD_IMAGE_NAME=${BUILD_IMAGE} -t ${Build_Img}. --no-cache --force-rm
+ docker build --build-arg BUILD_IMAGE_NAME=${BUILD_IMAGE} -t ${Build_Img} . --no-cache --force-rm
 if [ $? -ne "0" ]; then
 log "error:docker build failed"
 exit
