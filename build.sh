@@ -31,7 +31,7 @@ else
 log "Info:docker push to registry succeeded"
 fi
 }
-# main #
+
 if [ $# -eq 3 ]; then
 BUILD_IMAGE=$1
 Build_Img=$2
