@@ -1,7 +1,7 @@
 #!/bin/bash
 log()
 {
-echo -e "[`date '+%Y-+%m-+%d-+%T`]:" $1
+echo -e "[`date '+%Y-+%m-+%d-+%T'`]:" $1
 }
 build_image()
 {
