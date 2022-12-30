@@ -6,7 +6,7 @@ echo -e "[`date '+%Y-+%m-+%d-+%T'`]:" $1
 build_image()
 {
 log "INFO:starting building image of $1"
-usr/bin/docker build --build-arg BUILD_IMAGE_NAME=${BUILD_IMAGE} -t ${Build_Img}. --no-cache --force-rm
+usr/local/bin/docker build --build-arg BUILD_IMAGE_NAME=${BUILD_IMAGE} -t ${Build_Img}. --no-cache --force-rm
 if [ $? -ne "0" ]; then
 log "error:docker build failed"
 exit
@@ -14,7 +14,7 @@ fi
 }
 push_image()
 {
-usr/bin/docker login -u raviteja1121 -p passwd
+usr/local/bin/docker login -u raviteja1121 -p passwd
 if [ $? -ne "0" ]; then
 log "error:docker login failed"
 exit 1
@@ -22,8 +22,8 @@ else
 log "INFO:docker login [[ success ]]"
 fi
 log "INFO:starting docker push.."
-usr/bin/docker tag ${Build_Img} raviteja1121/${Build_Img}
-usr/bin/docker push raviteja1121/${Build_Img}
+usr/local/bin/docker tag ${Build_Img} raviteja1121/${Build_Img}
+usr/local/bin/docker push raviteja1121/${Build_Img}
 if [ $? -ne "0" ]; then
 log "error:docker push failed"
 exit 1
