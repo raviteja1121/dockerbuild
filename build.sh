@@ -14,7 +14,7 @@ fi
 }
 push_image()
 {
- docker login -u rswamy99@gmail.com -p passwd
+ docker login -u rswamy99@gmail.com -p $passwd
  if [ $? -ne "0" ]; then
  log "error:docker login failed"
  exit 1
